@@ -10,7 +10,7 @@ Here, i am using terrform provided foreman provider terraform-coop/foreman/0.7.0
 
 # Configure terraform to use foreman provider terraform-coop/foreman/0.7.0
 
-1. Create main.tf file and update required changes.
+1. Create main.tf file and update required changes in this file.
 
 2. Run terraform init to initialise and download the foreman provide from terraform. It is one time task for foreman provider initialization.
 
