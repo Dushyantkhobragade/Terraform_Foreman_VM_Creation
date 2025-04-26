@@ -3,7 +3,7 @@ This is to build VMs in foreman using terraform automation
 
 Here, i am using terrform provided foreman provider terraform-coop/foreman/0.7.0
 
-# Pre-requisite for setting up terraform provider.
+# Pre-requisite for setting up terraform provider
 1. vms metadata information in csv format. Check the vms.csv file format and content.
 2. Credentials of foreman UI
 3. connectivity to internet
