@@ -8,6 +8,14 @@ Here, i am using terrform provided foreman provider terraform-coop/foreman/0.7.0
 2. Credentials of foreman UI
 3. connectivity to internet
 
+# Understanding around main.tf file
+
+        This file has 4 sections in this file
+        1. Which foreman provider to use
+        2. Credentials of Foreman UI
+        3. file path to vms metadata file
+        4. Resource : using it will fetch vms metdata and create vms in foreman.
+
 # Configure terraform to use foreman provider terraform-coop/foreman/0.7.0
 
 1. Create main.tf and vms.csv file and update required changes in these files.
