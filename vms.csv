@@ -1,5 +1,5 @@
-HOSTNAME,HOSTGROUP,CPU,MEMORY_IN_MB
-terraform_client1.lab.io,LARGE_Centos8,4,8192
-terraform_client2.lab.io,SMALL_Centos8,2,4096
-terraform_client3.lab.io,LARGE_Centos8,2,8192
-terraform_client4.lab.io,LARGE_Centos8,4,4096
+HOSTNAME,HOSTGROUP_ID,CPU,MEMORY_IN_MB
+terraform_client1.lab.io,3,4,8192
+terraform_client2.lab.io,4,2,4096
+terraform_client3.lab.io,5,2,8192
+terraform_client4.lab.io,8,4,4096
