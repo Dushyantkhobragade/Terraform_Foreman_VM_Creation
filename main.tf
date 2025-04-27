@@ -32,18 +32,23 @@ locals {
 
 
 ### Read the csv file metadata information and pass it in for loop to build vms.
-resource "foreman_host" "vms" {
-  for_each = { for vm_metadata in local.vm_metadata : vm_metadata.HOSTNAME => vm_metadata }
-  name      = each.value["HOSTNAME"]
-  hostgroup_id = each.value["HOSTGROUP"]
-  managed = true
-  set_build_flag = true
-  compute_attributes = <<EOF
-  {
-    "cpus" : "each.value["CPU"]"
-    "memory_mb" : "each.value["MEMORY"]"
-  }
-  EOF
+  resource "foreman_host" "vms" {                                                                                                                                                                      
+    for_each = { for vm_metadata in local.vm_metadata : vm_metadata.HOSTNAME => vm_metadata }
+
+    name                = each.value["HOSTNAME"]
+    hostgroup_id        = each.value["HOSTGROUP"]
+    managed             = true
+    manage_power_operations = false
+    set_build_flag      = true
+
+    compute_attributes  = <<EOF
+    { 
+      "cluster" : "PRODUCTION",
+      "cpu" : "each.value[CPU]",
+      "memory_mb" : "each.value[MEMORY]",
+      "start" : "1"
+    } 
+    EOF
   
 ### Add any other required properties like subnet,IP,puppet information etc.
 
