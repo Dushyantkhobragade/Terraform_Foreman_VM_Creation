@@ -26,9 +26,11 @@ Here, i am using terrform provided foreman provider terraform-coop/foreman/0.7.0
 
 3. Validate the main.tf contents for any errors.
 
+        $ export TF_LOG="TRACE"
+        $ xport TF_LOG_PATH="terraform-vm-build.log
         $ terraform validate
 
-4. If all looks good proceed with terraform planning and apply.
+5. If all looks good proceed with terraform planning and apply.
 
         $ terraform plan          ---->>> Its to show what all metadata stuff being applied on that vms.
    
