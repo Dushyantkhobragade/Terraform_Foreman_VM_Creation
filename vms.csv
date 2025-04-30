@@ -1,4 +1,4 @@
-HOSTNAME,HOSTGROUP_ID,CPU,MEMORY
+HOSTNAME,HOSTGROUP,CPU,MEMORY
 terraform_client1.lab.io,3,4,8589934592
 terraform_client2.lab.io,4,2,8589934592
 terraform_client3.lab.io,5,2,8589934592
