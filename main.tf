@@ -21,6 +21,8 @@ provider "foreman" {
 
   server_hostname = "fqdn_foreman_server"
   server_protocol = "https"
+  location_id = 2
+  organization_id = 1
 }
 
 ### Below is metadata information of vms which needs to create. It looks for file vms.csv in pwd and converts into json format for terraform uses.
@@ -32,23 +34,21 @@ locals {
 
 
 ### Read the csv file metadata information and pass it in for loop to build vms.
-  resource "foreman_host" "vms" {                                                                                                                                                                      
+  resource "foreman_host" "vms" {                                                                                                                                                                     
     for_each = { for vm_metadata in local.vm_metadata : vm_metadata.HOSTNAME => vm_metadata }
 
-    name                = each.value["HOSTNAME"]
-    hostgroup_id        = each.value["HOSTGROUP"]
+    name                = each.value.HOSTNAME
+    hostgroup_id        = each.value.HOSTGROUP
     managed             = true
     manage_power_operations = false
     set_build_flag      = true
 
-    compute_attributes  = <<EOF
-    { 
-      "cluster" : "PRODUCTION",
-      "cpu" : "each.value[CPU]",
-      "memory_mb" : "each.value[MEMORY]",
+    compute_attributes  =  jsonencode({
+      "cores"  : each.value.CPU,
+      "memory" : each.value.MEMORY,
       "start" : "1"
-    } 
-    EOF
+    })
+}
   
 ### Add any other required properties like subnet,IP,puppet information etc.
 
