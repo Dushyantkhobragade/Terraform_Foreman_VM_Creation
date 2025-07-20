@@ -3,6 +3,8 @@ This is to build VMs in foreman using terraform automation
 
 Here, i am using terrform provided foreman provider terraform-coop/foreman/0.7.0
 
+# Note: I have use this for Testing and dev environment. Before applying production, make sure you have done your due diligence.
+
 # Pre-requisite for setting up terraform provider
 1. vms metadata information in csv format. Check the vms.csv file format and content. Metadata information has vm fqdn name, hostgroup id, number of CPUs, memory in bytes.
 2. Credentials of foreman UI
