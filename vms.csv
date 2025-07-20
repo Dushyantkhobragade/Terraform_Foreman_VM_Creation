@@ -1,3 +1,4 @@
+$ cat vms.csv 
 HOSTNAME,HOSTGROUP,CPU,MEMORY
 terraform_client1.lab.io,3,4,8589934592
 terraform_client2.lab.io,4,2,8589934592
